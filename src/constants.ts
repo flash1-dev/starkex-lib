@@ -147,6 +147,13 @@ export const ASSET_RESOLUTION: Record<Flash1Asset, number> = {
   // [Flash1Asset.XCH]: 8,
 };
 
+// FLASH1_CONTRACT_SIZE FLASH1 uses much more strict quantization on the contract size
+export const FLASH1_CONTRACT_SIZE: Record<Flash1Market, number> = {
+  [Flash1Market.BTC_USD]: 1e-4,
+  [Flash1Market.ETH_USD]: 1e-2,
+  [Flash1Market.LINK_USD]: 1,
+};
+
 export const COLLATERAL_ASSET_ADDRESS_BY_NETWORK: Record<NetworkId, string> = {
   [NetworkId.MAINNET]: '0x0000000000000000000000000000000000000000', // TODO: change when we know what it is
   [NetworkId.ROPSTEN]: '0x0000000000000000000000000000000000000000',
