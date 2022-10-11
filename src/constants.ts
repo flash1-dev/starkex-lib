@@ -15,7 +15,7 @@ export const COLLATERAL_ASSET = Flash1Asset.USDC;
 export const SYNTHETIC_ASSETS = _.without(ALL_ASSETS, COLLATERAL_ASSET) as SyntheticAsset[];
 
 /**
- * Mapping from a dYdX market to the synthetic asset for that market.
+ * Mapping from a Flash1's market to the synthetic asset for that market.
  */
 export const SYNTHETIC_ASSET_MAP: Record<Flash1Market, SyntheticAsset> = {
   [Flash1Market.BTC_USD]: Flash1Asset.BTC,
@@ -76,6 +76,12 @@ export const SYNTHETIC_ASSET_MAP: Record<Flash1Market, SyntheticAsset> = {
   // [Flash1Market.ALPHA_USD]: Flash1Asset.ALPHA,
   // [Flash1Market.WNXM_USD]: Flash1Asset.WNXM,
   // [Flash1Market.XCH_USD]: Flash1Asset.XCH,
+};
+
+export const REVERSE_SYNTHETIC_ASSET_MAP: Record<SyntheticAsset, Flash1Market> = {
+  [Flash1Asset.BTC]: Flash1Market.BTC_USD,
+  [Flash1Asset.ETH]: Flash1Market.ETH_USD,
+  [Flash1Asset.LINK]: Flash1Market.LINK_USD,
 };
 
 /**
