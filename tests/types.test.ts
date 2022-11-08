@@ -38,7 +38,7 @@ describe('SYNTHETIC_ASSET_MAP', () => {
   });
 
   it.skip('contains all assets in Flash1Asset', () => { // TODO: unskip when we know our asset list
-    const assets = Object.values(Flash1Asset).filter((x) => x !== Flash1Asset.USDC);
+    const assets = Object.values(Flash1Asset).filter((x) => x !== Flash1Asset.USDT);
     expect(Object.values(SYNTHETIC_ASSET_MAP)).toEqual(assets);
   });
 });

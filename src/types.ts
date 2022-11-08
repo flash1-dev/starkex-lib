@@ -29,7 +29,7 @@ export enum Flash1Market {
   // ONEINCH_USD = '1INCH-USD',
 }
 export enum Flash1Asset {
-  USDC = 'USDC',
+  USDT = 'USDT',
   BTC = 'BTC',
   ETH = 'ETH',
   LINK = 'LINK',
@@ -42,7 +42,7 @@ export enum Flash1Asset {
   // AVAX = 'AVAX',
   // ONEINCH = '1INCH',
 }
-export type SyntheticAsset = Exclude<Flash1Asset, Flash1Asset.USDC>;
+export type SyntheticAsset = Exclude<Flash1Asset, Flash1Asset.USDT>;
 
 // Key pair, represented as hex strings, no 0x prefix.
 export interface KeyPair {

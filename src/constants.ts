@@ -11,7 +11,7 @@ import {
 } from './types';
 
 export const ALL_ASSETS = Object.values(Flash1Asset);
-export const COLLATERAL_ASSET = Flash1Asset.USDC;
+export const COLLATERAL_ASSET = Flash1Asset.USDT;
 export const SYNTHETIC_ASSETS = _.without(ALL_ASSETS, COLLATERAL_ASSET) as SyntheticAsset[];
 
 /**
@@ -90,7 +90,7 @@ export const REVERSE_SYNTHETIC_ASSET_MAP: Record<SyntheticAsset, Flash1Market> =
  * For example, a resolution of 9 for ETH means that 1e-9 ETH = 1 Gwei is the smallest unit.
  */
 export const ASSET_RESOLUTION: Record<Flash1Asset, number> = {
-  [Flash1Asset.USDC]: 6,
+  [Flash1Asset.USDT]: 6,
   [Flash1Asset.BTC]: 10,
   [Flash1Asset.ETH]: 8,
   [Flash1Asset.LINK]: 7,
