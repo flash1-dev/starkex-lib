@@ -3,6 +3,7 @@
  */
 
 import expect from 'expect';
+import Big from 'big.js';
 
 import {
   SYNTHETIC_ASSET_ID_MAP,
@@ -58,6 +59,23 @@ describe('assets helpers', () => {
         assetIdSynthetic: SYNTHETIC_ASSET_ID_MAP[Flash1Asset.BTC],
         assetIdCollateral: COLLATERAL_ASSET_ID_BY_NETWORK_ID[NetworkId.GOERLI],
         isBuyingSynthetic: false,
+      });
+    });
+
+    it('converts order params to Starkware order params', () => {
+      expect(
+        getStarkwareAmounts({
+          market: Flash1Market.BTC_USD,
+          side: StarkwareOrderSide.BUY,
+          humanSize: '22.3784',
+          humanPrice: '21647.585000000003',
+        }, NetworkId.GOERLI),
+      ).toStrictEqual({
+        quantumsAmountSynthetic: '223784000000',
+        quantumsAmountCollateral: '484438316165',
+        assetIdSynthetic: SYNTHETIC_ASSET_ID_MAP[Flash1Asset.BTC],
+        assetIdCollateral: COLLATERAL_ASSET_ID_BY_NETWORK_ID[NetworkId.GOERLI],
+        isBuyingSynthetic: true,
       });
     });
 
