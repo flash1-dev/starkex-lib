@@ -29,9 +29,10 @@ const mockWithdrawal: WithdrawalWithClientId = {
   humanAmount: '49.478023',
   expirationIsoTimestamp: '2020-09-17T04:15:55.028Z',
   clientId: 'This is an ID that the client came up with to describe this withdrawal',
+  ethAddress: '0x9aB2f5bBdc3D991CBDb5D834de69707921F15B35'
 };
 const mockSignature = (
-  "04899be37b9776f1d963afc184efd274820715e12a1cde15533fe97609c5298a025d98188ffb9221da6285cc7c29cdc7207e3c6ec0b5f046710d1b5631e37c5b"
+  "00cafdd8b874a1d0b8241fa51d96f8c635e5ddb7aba9d97c44f0533abc3facd204b08357232cdf85fda983a8af2c0e22d3e5fcfcd22f5c791997feff1286a7e4"
 );
 
 describe('SignableWithdrawal', () => {
