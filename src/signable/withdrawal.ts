@@ -24,7 +24,7 @@ import {
 import { WITHDRAWAL_FIELD_BIT_LENGTHS } from './constants';
 import { StarkSignable } from './stark-signable';
 
-const WITHDRAWAL_PREFIX = 6;
+const WITHDRAWAL_PREFIX = 7;
 const WITHDRAWAL_PADDING_BITS = 49;
 
 /**
@@ -54,8 +54,7 @@ export class SignableWithdrawal extends StarkSignable<StarkwareWithdrawal> {
     withdrawal: WithdrawalWithNonce,
     networkId: NetworkId,
   ): SignableWithdrawal {
-    const positionId = withdrawal.positionId;
-    const nonce = withdrawal.nonce;
+    const { positionId, nonce, ethAddress } = withdrawal;
 
     // The withdrawal asset is always the collateral asset.
     const quantumsAmount = toQuantumsExact(withdrawal.humanAmount, COLLATERAL_ASSET);
@@ -69,6 +68,7 @@ export class SignableWithdrawal extends StarkSignable<StarkwareWithdrawal> {
         nonce,
         quantumsAmount,
         expirationEpochHours,
+        ethAddress,
       },
       networkId,
     );
@@ -103,7 +103,7 @@ export class SignableWithdrawal extends StarkSignable<StarkwareWithdrawal> {
       .iushln(WITHDRAWAL_PADDING_BITS);
 
     return getPedersenHash(
-      hexToBn(COLLATERAL_ASSET_ID_BY_NETWORK_ID[this.networkId]),
+      await getPedersenHash(hexToBn(COLLATERAL_ASSET_ID_BY_NETWORK_ID[this.networkId]), hexToBn(this.message.ethAddress)),
       packedWithdrawalBn,
     );
   }

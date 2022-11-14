@@ -73,6 +73,7 @@ interface WithdrawalParamsBase {
   positionId: string;
   humanAmount: string;
   expirationIsoTimestamp: string;
+  ethAddress: string
 }
 interface WithClientId {
   clientId: string;
@@ -90,6 +91,7 @@ export interface StarkwareWithdrawal {
   quantumsAmount: string;
   nonce: string; // For signature. A base-10 integer.
   expirationEpochHours: number;
+  ethAddress: string
 }
 
 // ============ Transfer and Conditional Transfer Parameters ============

@@ -69,6 +69,7 @@ const mockWithdrawal: WithdrawalWithClientId = {
   humanAmount: '49.478023',
   expirationIsoTimestamp: '2020-09-17T04:15:55.028Z',
   clientId: 'This is an ID that the client came up with to describe this withdrawal',
+  ethAddress: '0x9aB2f5bBdc3D991CBDb5D834de69707921F15B35'
 };
 
 describe.skip('Pedersen hashes', () => { // TODO: unskip these by fixing proxyquire
