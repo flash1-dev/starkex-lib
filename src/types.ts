@@ -119,6 +119,11 @@ export interface StarkwareTransfer {
   expirationEpochHours: number;
 }
 
+export interface StarkwareRegistration {
+  ethKey: string
+  starkKey: string
+}
+
 export interface StarkwareConditionalTransfer extends StarkwareTransfer {
   condition: string;
 }
