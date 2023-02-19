@@ -34,7 +34,7 @@ export declare enum CollateralNetworks {
   TRC20 = "TRC20"
 }
 
-export type SyntheticAsset = Exclude<Flash1Asset, AcceptedCollateral>;
+export type SyntheticAsset = Exclude<Flash1Asset, AcceptedCollateral.USDT>;
 
 // Key pair, represented as hex strings, no 0x prefix.
 export interface KeyPair {
