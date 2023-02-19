@@ -19,30 +19,22 @@ export enum Flash1Market {
   BTC_USD = 'BTC-USD',
   ETH_USD = 'ETH-USD',
   LINK_USD = 'LINK-USD',
-  // BCH_USD = 'BCH-USD',
-  // SOL_USD = 'SOL-USD',
-  // DOGE_USD = 'DOGE-USD',
-  // TRX_USD = 'TRX-USD',
-  // ADA_USD = 'ADA-USD',
-  // DOT_USD = 'DOT-USD',
-  // AVAX_USD = 'AVAX-USD',
-  // ONEINCH_USD = '1INCH-USD',
 }
 export enum Flash1Asset {
   USDT = 'USDT',
   BTC = 'BTC',
   ETH = 'ETH',
   LINK = 'LINK',
-  // BCH = 'BCH',
-  // SOL = 'SOL',
-  // DOGE = 'DOGE',
-  // TRX = 'TRX',
-  // ADA = 'ADA',
-  // DOT = 'DOT',
-  // AVAX = 'AVAX',
-  // ONEINCH = '1INCH',
 }
-export type SyntheticAsset = Exclude<Flash1Asset, Flash1Asset.USDT>;
+export declare enum AcceptedCollateral {
+  USDT = "USDT"
+}
+export declare enum CollateralNetworks {
+  ERC20 = "ERC20",
+  TRC20 = "TRC20"
+}
+
+export type SyntheticAsset = Exclude<Flash1Asset, AcceptedCollateral>;
 
 // Key pair, represented as hex strings, no 0x prefix.
 export interface KeyPair {
